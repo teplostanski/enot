@@ -7,7 +7,7 @@ const App: React.FC = () => {
   //const [activeNote, setActiveNote] = useState('');
 
   return (
-    <div>
+    <div className='app'>
       <Header />
     </div>
   );
