@@ -1,0 +1,24 @@
+/*.header {
+}*/
+
+.header__container {
+  width: 100%;
+  display: flex;
+  padding: 25px;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.header__content {
+  max-width: 800px;
+  width: 60vw;
+  border: 1px solid red;
+}
+
+.header__logo_text {
+  margin: 0;
+}
+
+.header__logo_img {
+  width: 28px;
+}
