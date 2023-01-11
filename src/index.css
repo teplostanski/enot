@@ -1,0 +1,9 @@
+@import url(./vendor/normalize.css);
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
