@@ -15,3 +15,10 @@
 <br>
 
 Веб-приложение markdown-заметок
+
+Стэк:
+
+- React ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/teplostanski/aned/react?label=%20&style=for-the-badge)
+- TypeSctipt ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/teplostanski/aned/dev/typescript?label=%20&style=for-the-badge)
+- Vite ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/teplostanski/aned/dev/vite?label=%20&style=for-the-badge)
+- HTML
