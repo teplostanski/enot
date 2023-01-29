@@ -1,0 +1,22 @@
+.footer {
+  border: solid var(--fg-primary);
+  border-width: 0 1px 1px 1px ;
+  font-size: 12px;
+  
+}
+
+.footer__container {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__content {
+  color: var(--fg2);
+  text-decoration: none;
+}
+
+.footer__content:hover {
+  color: var(--select);
+  text-decoration: underline;
+}
