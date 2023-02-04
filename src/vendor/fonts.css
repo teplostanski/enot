@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "montserratblack";
+  src: url("./fonts/Montserrat-Black.woff2") format("woff2"),
+    url("./fonts/Montserrat-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserratextralight";
+  src: url("./fonts/Montserrat-ExtraLight.woff2") format("woff2"),
+    url("./fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserratregular";
+  src: url("./fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("./fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserratlight";
+  src: url("./fonts/Montserrat-Light.woff2") format("woff2"),
+    url("./fonts/Montserrat-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "jetbrains_mono";
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("./fonts/JetBrainsMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
