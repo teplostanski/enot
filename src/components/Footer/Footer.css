@@ -1,8 +1,7 @@
 .footer {
   border: solid var(--fg-primary);
   border-width: 0 1px 1px 1px ;
-  font-size: 12px;
-  
+  font-size: 16px;
 }
 
 .footer__container {
@@ -12,6 +11,7 @@
 }
 
 .footer__content {
+  font-family: 'montserratextralight';
   color: var(--fg2);
   text-decoration: none;
 }

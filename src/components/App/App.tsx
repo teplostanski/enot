@@ -2,6 +2,7 @@
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './App.css';
+import '../../index.css'
 
 const App: React.FC = () => {
   //const [notes, setNotes] = useState([]);
