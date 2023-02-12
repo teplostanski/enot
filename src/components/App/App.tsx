@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
   return (
     <div className='app'>
-      <Header />
+      <Header onAddNote={undefined} />
       <AllNotes
         notes={notes}
         onDeleteNote={onDeleteNote}
