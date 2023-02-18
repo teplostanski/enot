@@ -1,5 +1,6 @@
+import './AllNotes.css'
+
 interface AllNotesProps {
-  onAddNote: any;
   notes: any;
   onDeleteNote: any;
   activeNote: any;
@@ -13,11 +14,11 @@ const AllNotes = (props: AllNotesProps) => {
 
 
   return (
-    <div className="main">
-      <div className="main__header">
+    <div className="all-notes">
+      {/*<div className="all-notes__header">
         <button className="button" onClick={props.onAddNote}>Создать</button>
-      </div>
-      <div className="main__notes">
+      </div>*/}
+      <div className="all-notes__notes">
         {sortedNotes.map(
           ({
             id,
@@ -31,18 +32,18 @@ const AllNotes = (props: AllNotesProps) => {
             lastModified: number;
           }) => (
             <div
-              className={`main__note ${
+              className={`all-notes__note ${
                 id === props.activeNote && 'active'
               }`}
               onClick={() => props.setActiveNote(id)}
               key={id}
             >
-              <div className="main__note_title">
+              <div className="all-notes__note_title">
                 <strong>{title}</strong>
                 <button className="button" onClick={() => props.onDeleteNote(id)}>Удалить</button>
               </div>
 
-              <p className="main__note_body">{body}</p>
+              <p className="all-notes__note_body">{body}</p>
               <small className="note-meta">
                 Последние изменения{' '}
                 {new Date(lastModified).toLocaleDateString('ru-RU', {

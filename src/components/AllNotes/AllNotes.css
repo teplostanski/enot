@@ -1,0 +1,47 @@
+.all-notes {
+  /*width: 60vw;*/
+  /*max-width: 900px;*/
+  /*min-width: 400px;*/
+  /*height: 85vh;*/
+  border: 1px solid var(--fg-primary);
+  border-width: 0 1px;
+  grid-area: c;
+}
+
+.all-notes__notes {
+  height: 85vh;
+  overflow-y: scroll;
+}
+.all-notes__note {
+  padding: 25px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--fg-primary);
+}
+
+.all-notes__note:last-child {
+  border-bottom: none;
+}
+
+.all-notes__note_title {
+  display: flex;
+  justify-content: space-between;
+}
+.all-notes__note_body {
+  white-space: break-spaces;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.all-notes__note p {
+  margin: 10px 0;
+  max-height: 56px;
+}
+.all-notes__note small {
+  display: block;
+  font-family: 'montserratlight';
+}
+
+.all-notes__note:hover {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+}

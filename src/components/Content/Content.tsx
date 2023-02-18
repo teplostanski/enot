@@ -1,6 +1,8 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 
+import './Content.css';
+
 interface ContentProps {
   activeNote: any;
   onUpdateNote: any;
@@ -18,11 +20,13 @@ const Content = (props: ContentProps) => {
     });
   };
 
-  if (!props.activeNote) return null
+  if (!props.activeNote) return null;
 
   return (
     <div className="content">
-      <button className="button" onClick={props.close}>CLOSE</button>
+      <button className="button" onClick={props.close}>
+        Закрыть
+      </button>
       <div className="content__note_edit">
         <input
           type="text"

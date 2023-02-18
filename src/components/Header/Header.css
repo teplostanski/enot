@@ -1,16 +1,20 @@
+.header {
+grid-area: h;
+}
+
 .header__container {
   width: 100%;
   display: flex;
   padding: 25px;
   justify-content: center;
-  border: 1px solid;
+  /*border: 1px solid;*/
 }
 
 .header__content {
   max-width: 800px;
   height: 40px;
   width: 60vw;
-  border: 1px solid;
+  /*border: 1px solid;*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
