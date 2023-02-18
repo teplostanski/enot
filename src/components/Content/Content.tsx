@@ -22,7 +22,7 @@ const Content = (props: ContentProps) => {
 
   return (
     <div className="content">
-      <button onClick={props.close}>CLOSE</button>
+      <button className="button" onClick={props.close}>CLOSE</button>
       <div className="content__note_edit">
         <input
           type="text"

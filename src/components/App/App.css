@@ -7,10 +7,23 @@
 }
 
 .app {
-  font-family: 'montserratblack';
+  font-family: 'montserratregular';
   height: 100vh;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 15px;
+  background: var(--bg-primary);
+  color: var(--fg-primary);
+}
+
+.button {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--fg-primary);
+  padding: 7px;
+  cursor: pointer;
+}
+
+.button:hover {
   background: var(--bg-primary);
   color: var(--fg-primary);
 }

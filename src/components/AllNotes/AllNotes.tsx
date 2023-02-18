@@ -15,7 +15,7 @@ const AllNotes = (props: AllNotesProps) => {
   return (
     <div className="main">
       <div className="main__header">
-        <button onClick={props.onAddNote}>Создать</button>
+        <button className="button" onClick={props.onAddNote}>Создать</button>
       </div>
       <div className="main__notes">
         {sortedNotes.map(
@@ -39,7 +39,7 @@ const AllNotes = (props: AllNotesProps) => {
             >
               <div className="main__note_title">
                 <strong>{title}</strong>
-                <button onClick={() => props.onDeleteNote(id)}>Удалить</button>
+                <button className="button" onClick={() => props.onDeleteNote(id)}>Удалить</button>
               </div>
 
               <p className="main__note_body">{body}</p>

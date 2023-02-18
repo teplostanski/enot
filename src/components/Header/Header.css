@@ -8,8 +8,13 @@
 
 .header__content {
   max-width: 800px;
+  height: 40px;
   width: 60vw;
   border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo_text {
