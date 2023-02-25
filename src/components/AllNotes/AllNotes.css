@@ -18,9 +18,9 @@
   border-bottom: 1px solid var(--fg-primary);
 }
 
-.all-notes__note:last-child {
+/*.all-notes__note:last-child {
   border-bottom: none;
-}
+}*/
 
 .all-notes__note_title {
   display: flex;

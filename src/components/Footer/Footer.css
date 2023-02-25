@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid var(--fg-primary);
-  font-size: 16px;
+  font-size: 14px;
   grid-area: f;
 }
 
