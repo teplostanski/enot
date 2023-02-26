@@ -5,15 +5,15 @@ grid-area: h;
 .header__container {
   width: 100%;
   display: flex;
-  padding: 25px;
+  padding: 0 25px;
   justify-content: center;
-  /*border: 1px solid;*/
+  align-items: center;
 }
 
 .header__content {
-  max-width: 800px;
+  /*max-width: 800px;*/
   height: 40px;
-  width: 60vw;
+  width: 100%;
   /*border: 1px solid;*/
   display: flex;
   flex-direction: row;
