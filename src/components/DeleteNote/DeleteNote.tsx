@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+//import React from 'react';
 //import Markdown from 'react-markdown';
 
 interface DeleteNoteProps {

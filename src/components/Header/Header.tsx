@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import './Header.css';
 import logoSrc from '../../assets/logo.png';
 
