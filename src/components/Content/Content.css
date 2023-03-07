@@ -3,7 +3,9 @@
   height: 100vh;
   position: absolute;
   background: var(--bg-primary);
+  overflow-x: scroll;
   /*border: 1px solid var(--fg-primary);*/
+
 }
 /*.content__note_edit,
 .content__note_preview {
@@ -19,18 +21,23 @@
   color: #999;
 }*/
 
-/* Editing */
-.content__note_edit {
-  padding: 25px;
+.content__wrapper {
+  display: flex;
+  margin-top: 20px;
 }
+
+/* Editing */
+/*.content__note_edit {
+  padding: 25px;
+}*/
 
 .content__note_edit input,
 textarea {
   display: block;
-  border: 1px solid var(--fg-primary);
-  margin-bottom: 20px;
-  width: 100%;
-  height: calc(50vh - 130px);
+  border: none;
+  /*margin-bottom: 20px;*/
+  width: 50vw;
+  height: 100%;
   padding: 10px;
   resize: none;
   font-size: inherit;
@@ -40,18 +47,18 @@ textarea {
 .content__note_edit input {
   height: 50px;
   font-size: 2rem;
-
+  border-bottom: 1px solid var(--fg-primary);
 }
 
 /* Preview */
 .content__note_preview {
-  border-top: 1px solid var(--fg-primary);
+  border-left: 1px solid var(--fg-primary);
   overflow-y: scroll;
   /*background: rgba(0, 0, 0, 0.02);*/
 }
 
 .preview-title {
-  padding: 25px 25px 0 25px;
+  padding: 10px 25px;
   margin: 0;
 }
 

@@ -32,55 +32,60 @@ const Content = (props: ContentProps) => {
       <button className="button" onClick={props.close}>
         Закрыть
       </button>
-      <div className="content__note_edit">
-        <input
-          type="text"
-          id="title"
-          placeholder="Заголовок"
-          value={props.activeNote.title}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            onEditField({ field: 'title', value: event.target.value })
-          }
-          autoFocus
-        />
-        <textarea
-          id="body"
-          placeholder="Начните писать здесь..."
-          value={props.activeNote.body}
-          onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
-            onEditField({ field: 'body', value: event.target.value })
-          }
-        />
-      </div>
-      <div className="content__note_preview">
-        <h1 className="preview-title">{props.activeNote.title}</h1>
-        <Markdown
-          remarkPlugins={[remarkGfm]}
-          children={props.activeNote.body}
-          className="markdown-preview"
-          components={{
-            code({ inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  {...props}
-                  children={String(children).replace(/\n$/, '')}
-                  style={vs}
-                  language={match[1]}
-                  PreTag="div"
-                  showLineNumbers= {true}
-                  customStyle={{borderRadius: "0", backgroundColor: "#24292e"}}
-                />
-              ) : (
-                <code {...props} className={className}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        />
-        {/*{}
+      <div className="content__wrapper">
+        <div className="content__note_edit">
+          <input
+            type="text"
+            id="title"
+            placeholder="Заголовок"
+            value={props.activeNote.title}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              onEditField({ field: 'title', value: event.target.value })
+            }
+            autoFocus
+          />
+          <textarea
+            id="body"
+            placeholder="Начните писать здесь..."
+            value={props.activeNote.body}
+            onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+              onEditField({ field: 'body', value: event.target.value })
+            }
+          />
+        </div>
+        <div className="content__note_preview">
+          <h1 className="preview-title">{props.activeNote.title}</h1>
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            children={props.activeNote.body}
+            className="markdown-preview"
+            components={{
+              code({ inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={vs}
+                    language={match[1]}
+                    PreTag="div"
+                    showLineNumbers={true}
+                    customStyle={{
+                      borderRadius: '0',
+                      backgroundColor: '#24292e',
+                    }}
+                  />
+                ) : (
+                  <code {...props} className={className}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          />
+          {/*{}
         </Markdown>*/}
+        </div>
       </div>
     </div>
   );
