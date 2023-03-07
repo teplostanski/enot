@@ -7,7 +7,8 @@
     "start": "react-scripts start",
     "build": "npm run lint && tsc && react-scripts build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "deploy": "npm run build && cp ./CNAME ./build && gh-pages -d build"
+    "deploy": "npm run build && cp ./CNAME ./build && gh-pages -d build",
+    "testDeploy": "git push origin develop:test-deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -19,12 +20,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",
-    "react-uuid": "^2.0.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "react-uuid": "^2.0.0",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.18.30",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/react-syntax-highlighter": "^15.5.6",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",

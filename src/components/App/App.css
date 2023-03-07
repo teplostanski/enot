@@ -6,6 +6,27 @@
   width: 0;
 }
 
+code {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+  padding: 3px 5px;
+  font-family: 'montserratregular';
+}
+
+table, td, th {
+  border: 1px solid var(--fg-primary);
+  /*padding: 5px;*/
+}
+
+tbody td {
+  padding: 8px;
+}
+
+table {
+  /*width: 100%;*/
+  border-collapse: collapse;
+}
+
 .app {
   font-family: 'montserratregular';
   font-size: 15px;
@@ -29,7 +50,7 @@
 }
 
 .line {
-background: #000;
+background: var(--fg-primary);
 grid-area: l;
 }
 
