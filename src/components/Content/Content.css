@@ -1,4 +1,4 @@
-.content {
+.editor {
   width: inherit;
   height: 100vh;
   position: absolute;
@@ -7,8 +7,8 @@
   /*border: 1px solid var(--fg-primary);*/
 
 }
-/*.content__note_edit,
-.content__note_preview {
+/*.editor__note_edit,
+.editor__note_preview {
   height: 50vh;
 }*/
 
@@ -21,17 +21,17 @@
   color: #999;
 }*/
 
-.content__wrapper {
+.editor__wrapper {
   display: flex;
   margin-top: 20px;
 }
 
 /* Editing */
-/*.content__note_edit {
+/*.editor__note_edit {
   padding: 25px;
 }*/
 
-.content__note_edit input,
+.editor__note_edit input,
 textarea {
   display: block;
   border: 1px solid;
@@ -46,14 +46,14 @@ textarea {
   box-sizing: border-box;
 }
 
-.content__note_edit input {
+.editor__note_edit input {
   height: 50px;
   font-size: 2rem;
   border-bottom: 1px solid var(--fg-primary);
 }
 
 /* Preview */
-.content__note_preview {
+.editor__note_preview {
   border-left: 1px solid var(--fg-primary);
   overflow-y: scroll;
   /*background: rgba(0, 0, 0, 0.02);*/
@@ -70,7 +70,7 @@ textarea {
   line-height: 2rem;
 }
 
-.content__buttons {
+.editor__buttons {
   display: flex;
   justify-content: flex-start;
   gap: 1px;

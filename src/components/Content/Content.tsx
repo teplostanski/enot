@@ -32,15 +32,15 @@ const Content = (props: ContentProps) => {
   if (!props.activeNote) return null;
 
   return (
-    <div className="content">
-      <div className="content__buttons">
+    <div className="editor">
+      <div className="editor__buttons">
         <button className="button" onClick={props.close}>
           Закрыть
         </button>
         <DeleteNote onDeleteNote={props.onDeleteNote} id={props.id} />
       </div>
-      <div className="content__wrapper">
-        <div className="content__note_edit">
+      <div className="editor__wrapper">
+        <div className="editor__note_edit">
           <input
             type="text"
             id="title"
@@ -60,7 +60,7 @@ const Content = (props: ContentProps) => {
             }
           />
         </div>
-        <div className="content__note_preview">
+        <div className="editor__note_preview">
           <h1 className="preview-title">{props.activeNote.title}</h1>
           <Markdown
             remarkPlugins={[remarkGfm]}
