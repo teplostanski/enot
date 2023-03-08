@@ -8,6 +8,9 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import vs from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
 
+import TextareaAutosize from 'react-textarea-autosize';
+
+
 interface ContentProps {
   activeNote: any;
   onUpdateNote: any;
@@ -44,7 +47,7 @@ const Content = (props: ContentProps) => {
             }
             autoFocus
           />
-          <textarea
+          <TextareaAutosize
             id="body"
             placeholder="Начните писать здесь..."
             value={props.activeNote.body}
@@ -83,8 +86,6 @@ const Content = (props: ContentProps) => {
               },
             }}
           />
-          {/*{}
-        </Markdown>*/}
         </div>
       </div>
     </div>

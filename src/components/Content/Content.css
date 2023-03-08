@@ -34,7 +34,7 @@
 .content__note_edit input,
 textarea {
   display: block;
-  border: none;
+  border: 1px solid;
   /*margin-bottom: 20px;*/
   width: 50vw;
   height: 100%;
@@ -43,7 +43,9 @@ textarea {
   font-size: inherit;
   font-family: inherit;
   outline: var(--fg-primary);
+  box-sizing: border-box;
 }
+
 .content__note_edit input {
   height: 50px;
   font-size: 2rem;
