@@ -10,6 +10,7 @@ import vs from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
 
 import TextareaAutosize from 'react-textarea-autosize';
 
+import DeleteNote from '../DeleteNote';
 
 interface ContentProps {
   activeNote: any;
@@ -32,9 +33,12 @@ const Content = (props: ContentProps) => {
 
   return (
     <div className="content">
-      <button className="button" onClick={props.close}>
-        Закрыть
-      </button>
+      <div className="content__buttons">
+        <button className="button" onClick={props.close}>
+          Закрыть
+        </button>
+        <DeleteNote onDeleteNote={props.onDeleteNote} id={props.id} />
+      </div>
       <div className="content__wrapper">
         <div className="content__note_edit">
           <input

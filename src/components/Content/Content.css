@@ -1,5 +1,5 @@
 .content {
-  width: 100%;
+  width: inherit;
   height: 100vh;
   position: absolute;
   background: var(--bg-primary);
@@ -68,4 +68,10 @@ textarea {
   padding: 0 25px 25px 25px;
   font-size: 1rem;
   line-height: 2rem;
+}
+
+.content__buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1px;
 }
