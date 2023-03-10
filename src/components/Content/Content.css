@@ -36,6 +36,8 @@ textarea {
   display: block;
   border: none;
   /*margin-bottom: 20px;*/
+  background: var(--bg-primary);
+  color: var(--fg-primary);
   width: 50vw;
   height: 100%;
   padding: 10px;

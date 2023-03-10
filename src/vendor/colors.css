@@ -32,10 +32,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: var(--light-scheme_light);
-    --bg2: var(--light-scheme_gray3);
-    --fg-primary: var(--light-scheme_dark);
-    --fg2: var(--light-scheme_gray1);
+    --fg-primary: var(--light-scheme_light);
+    --fg2: var(--light-scheme_gray3);
+    --bg-primary: var(--light-scheme_dark);
+    --bg2: var(--light-scheme_gray1);
     --border: var(--light-scheme_gray2);
     --select: var(--light-scheme_blue);
     --error_fg: var(--light-scheme_red);
