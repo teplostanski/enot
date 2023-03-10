@@ -34,7 +34,7 @@
 .editor__note_edit input,
 textarea {
   display: block;
-  border: 1px solid;
+  border: none;
   /*margin-bottom: 20px;*/
   width: 50vw;
   height: 100%;
