@@ -3,12 +3,14 @@
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './App.css';
-import '../../index.css'
+import '../../index.css';
 import AllNotes from '../AllNotes';
 import { useEffect, useState } from 'react';
 
 import uuid from 'react-uuid';
 import Content from '../Content';
+
+import { initNote } from '../../utils/constants';
 
 type NewNote = {
   id: string;
@@ -19,7 +21,7 @@ type NewNote = {
 
 const App: React.FC = () => {
   const [notes, setNotes] = useState(
-    localStorage.notes ? JSON.parse(localStorage.notes) : []
+    localStorage.notes ? JSON.parse(localStorage.notes) : [initNote]
   );
   const [activeNote, setActiveNote] = useState('');
   console.log(activeNote);
@@ -69,11 +71,11 @@ const App: React.FC = () => {
     const res = notes.find(({ id }: { id: any }) => id === activeNote);
     console.log(typeof res);
 
-    return res
+    return res;
   };
 
   return (
-    <div className='app'>
+    <div className="app">
       <Header onAddNote={onAddNote} />
       <AllNotes
         notes={notes}

@@ -43,7 +43,7 @@ textarea {
   padding: 10px;
   resize: none;
   font-size: inherit;
-  font-family: inherit;
+  font-family: 'jetbrains_mono';
   outline: var(--fg-primary);
   box-sizing: border-box;
 }
