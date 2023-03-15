@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
@@ -44,9 +45,9 @@ const App: React.FC = () => {
       setActiveNote(newNote.id);
     }
 
-    if (newNote.title == '') {
-      newNote.title = Date.now();
-    }
+    //if (newNote.title == '') {
+    //  newNote.title = new Date().toLocaleDateString();
+    //}
   };
 
   const onDeleteNote = (noteId: any) => {
@@ -54,23 +55,37 @@ const App: React.FC = () => {
   };
 
   const onUpdateNote = (updatedNote: any) => {
-    console.log(`updatedNote${JSON.stringify(updatedNote)}`);
+    //console.log(`updatedNote${JSON.stringify(updatedNote)}`);
 
     const updatedNotesArr = notes.map((note: any) => {
-      console.log(`note${JSON.stringify(note)}`);
+      //console.log(`note${JSON.stringify(note)}`);
       if (note.id === updatedNote.id) {
         return updatedNote;
       }
+
+      const getTitle = () => {
+        const patern = /\#(.+?)(?:\n|$)/;
+        const result = updatedNote.body.match(patern);
+        if (result) {
+          updatedNote.title = result?.[1];
+        } else {
+          updatedNote.title = `${new Date().toLocaleDateString()} - ${new Date()
+            .toLocaleTimeString()
+            .slice(0, -3)}`;
+        }
+      };
+
+      getTitle();
       return note;
     });
 
     setNotes(updatedNotesArr);
-    console.log(`updatedNotesArr${JSON.stringify(updatedNotesArr)}`);
+    //console.log(`updatedNotesArr${JSON.stringify(updatedNotesArr)}`);
   };
 
   const getActiveNote = () => {
     const res = notes.find(({ id }: { id: any }) => id === activeNote);
-    console.log(typeof res);
+    //console.log(typeof res);
 
     return res;
   };
