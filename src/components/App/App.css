@@ -66,3 +66,7 @@ grid-area: l;
   background: var(--bg-primary);
   color: var(--fg-primary);
 }
+
+.delete-button:hover{
+  background: var(--error_fg);
+}

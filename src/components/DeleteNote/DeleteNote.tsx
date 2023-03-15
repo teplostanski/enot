@@ -10,7 +10,7 @@ interface DeleteNoteProps {
 const DeleteNote = (props: DeleteNoteProps) => {
 
   return (
-    <button className="button" onClick={() => props.onDeleteNote(props.id)}>Удалить</button>
+    <button className="button delete-button" onClick={() => props.onDeleteNote(props.id)}>Удалить</button>
   );
 };
 

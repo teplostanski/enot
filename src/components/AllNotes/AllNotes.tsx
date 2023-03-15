@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import DeleteNote from '../DeleteNote';
 import './AllNotes.css'
 
 interface AllNotesProps {
@@ -41,7 +42,7 @@ const AllNotes = (props: AllNotesProps) => {
             >
               <div className="all-notes__note_title">
                 <strong>{title}</strong>
-                <button className="button" onClick={() => props.onDeleteNote(id)}>Удалить</button>
+                <DeleteNote onDeleteNote={props.onDeleteNote} id={id} />
               </div>
 
               <p className="all-notes__note_body">{body}</p>
