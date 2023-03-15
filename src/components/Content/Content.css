@@ -23,7 +23,7 @@
 
 .editor__wrapper {
   display: flex;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 /* Editing */
@@ -76,4 +76,8 @@ textarea {
   display: flex;
   justify-content: flex-start;
   gap: 1px;
+  padding: 1px;
+  width: 100%;
+  position: fixed;
+  background-color: var(--bg-primary);
 }
