@@ -13,7 +13,9 @@ code {
   font-family: 'montserratregular';
 }
 
-table, td, th {
+table,
+td,
+th {
   border: 1px solid var(--fg-primary);
   /*padding: 5px;*/
 }
@@ -41,8 +43,9 @@ table {
   display: grid;
   /*justify-items: center;*/
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 10vh 1px 85vh 5vh;
+  grid-template-rows: 60px 10vh 1px 85vh 5vh;
   grid-template-areas:
+    'w w w w w w w w w w w w'
     '. . . h h h h h h . . .'
     'l l l l l l l l l l l l'
     '. . . c c c c c c . . .'
@@ -50,8 +53,8 @@ table {
 }
 
 .line {
-background: var(--fg-primary);
-grid-area: l;
+  background: var(--fg-primary);
+  grid-area: l;
 }
 
 .button {
@@ -60,7 +63,7 @@ grid-area: l;
   border: 1px solid var(--fg-primary);
   padding: 7px;
   cursor: pointer;
-  height: fit-content;/*фикс высоты кнопок*/
+  height: fit-content; /*фикс высоты кнопок*/
 }
 
 .button:hover {
@@ -68,6 +71,6 @@ grid-area: l;
   color: var(--fg-primary);
 }
 
-.delete-button:hover{
+.delete-button:hover {
   background: var(--error_fg);
 }

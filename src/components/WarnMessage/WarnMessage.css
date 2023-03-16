@@ -1,0 +1,15 @@
+.warn-message {
+  background-color: #24292e;
+  color: var(--warn_fg);
+  border: 3px solid var(--error_fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: w;
+}
+
+.warn-message__text {
+  padding: 0 15px;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
