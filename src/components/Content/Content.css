@@ -59,6 +59,7 @@ textarea {
   border-left: 1px solid var(--fg-primary);
   overflow-y: scroll;
   /*background: rgba(0, 0, 0, 0.02);*/
+  overflow-wrap: break-word; /*фикс горизонтального скролла в превью*/
 }
 
 .preview-title {
