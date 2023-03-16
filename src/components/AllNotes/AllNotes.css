@@ -25,6 +25,7 @@
 .all-notes__note_title {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 .all-notes__note_body {
   white-space: break-spaces;
