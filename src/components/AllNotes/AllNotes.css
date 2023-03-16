@@ -34,7 +34,7 @@
 
 .all-notes__note p {
   margin: 10px 0;
-  max-height: 56px;
+  max-height: 140px;
 }
 .all-notes__note small {
   display: block;
