@@ -60,6 +60,7 @@ grid-area: l;
   border: 1px solid var(--fg-primary);
   padding: 7px;
   cursor: pointer;
+  height: fit-content;/*фикс высоты кнопок*/
 }
 
 .button:hover {
