@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import DeleteNote from '../DeleteNote';
-import './AllNotes.css'
+import './AllNotes.css';
 
 interface AllNotesProps {
   notes: any;
@@ -13,7 +13,6 @@ const AllNotes = (props: AllNotesProps) => {
   const sortedNotes = props.notes.sort(
     (a: any, b: any) => b.lastModified - a.lastModified
   );
-
 
   return (
     <div className="all-notes">
@@ -42,7 +41,9 @@ const AllNotes = (props: AllNotesProps) => {
             >
               <div className="all-notes__note_title">
                 <strong>{title}</strong>
-                <DeleteNote onDeleteNote={props.onDeleteNote} id={id} />
+                <div className="all-notes__button">
+                  <DeleteNote onDeleteNote={props.onDeleteNote} id={id} />
+                </div>
               </div>
 
               <p className="all-notes__note_body">{body}</p>

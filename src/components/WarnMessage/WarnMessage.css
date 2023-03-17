@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   grid-area: w;
+  /*display: none;*/
 }
 
 .warn-message__text {

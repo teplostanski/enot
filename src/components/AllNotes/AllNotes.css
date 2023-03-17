@@ -3,19 +3,21 @@
   /*max-width: 900px;*/
   /*min-width: 400px;*/
   /*height: 85vh;*/
-  border: 1px solid var(--fg-primary);
+  /*border: 1px solid var(--fg-primary);*/
   border-width: 0 1px;
   grid-area: c;
 }
 
 .all-notes__notes {
-  height: 85vh;
+  height: 80vh;
   overflow-y: scroll;
 }
 .all-notes__note {
-  padding: 25px;
+  padding: 17px 24px;
   cursor: pointer;
-  border-bottom: 1px solid var(--fg-primary);
+  border: 1px solid var(--fg-primary);
+  margin: 8px 0;
+  position: relative;
 }
 
 /*.all-notes__note:last-child {
@@ -26,6 +28,12 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  width: 76%;
+}
+
+.all-notes__button {
+  position: absolute;
+  right: 24px;
 }
 .all-notes__note_body {
   white-space: break-spaces;

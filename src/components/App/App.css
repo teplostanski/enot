@@ -43,7 +43,7 @@ table {
   display: grid;
   /*justify-items: center;*/
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 60px 10vh 1px 85vh 5vh;
+  grid-template-rows: 1fr 1.5fr 1px 0fr 20px;
   grid-template-areas:
     'w w w w w w w w w w w w'
     '. . . h h h h h h . . .'
@@ -71,6 +71,12 @@ table {
   color: var(--fg-primary);
 }
 
+.delete-button {
+  border: 1px solid var(--bg-primary);
+}
+
 .delete-button:hover {
   background: var(--error_fg);
+  color: var(--bg-primary);
+  border: 1px solid var(--fg-primary);
 }
