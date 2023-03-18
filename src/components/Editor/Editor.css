@@ -1,6 +1,6 @@
 .editor {
   width: inherit;
-  height: 100vh;
+  height: inherit;
   position: absolute;
   background: var(--bg-primary);
   overflow-x: scroll;
@@ -23,7 +23,10 @@
 
 .editor__wrapper {
   display: flex;
+  /*height: 90vh;*/
   margin-top: 40px;
+  /*margin: 40px 15px 15px 15px;*/
+  /*border: 1px solid var(--border);*/
 }
 
 /* Editing */
@@ -40,7 +43,7 @@ textarea {
   color: var(--fg-primary);
   width: 50vw;
   height: 100%;
-  padding: 10px;
+  margin: 1.2em 14px;
   resize: none;
   font-size: inherit;
   font-family: 'jetbrains_mono';

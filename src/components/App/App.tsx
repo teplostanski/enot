@@ -9,7 +9,7 @@ import AllNotes from '../AllNotes';
 import { useEffect, useState } from 'react';
 
 import uuid from 'react-uuid';
-import Content from '../Content';
+import Editor from '../Editor';
 import WarnMessage from '../WarnMessage';
 
 import { initNote } from '../../utils/constants';
@@ -103,7 +103,7 @@ const App: React.FC = () => {
       {activeNote && (
         <>
           {/*<button onClick={() => setActiveNote('')}>CLOSE</button>*/}
-          <Content
+          <Editor
             activeNote={getActiveNote()}
             onUpdateNote={onUpdateNote}
             close={() => setActiveNote('')}

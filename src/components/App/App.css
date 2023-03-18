@@ -29,6 +29,10 @@ table {
   border-collapse: collapse;
 }
 
+h1 {
+  margin: 0.5em 0;
+}
+
 .app {
   font-family: 'montserratregular';
   font-size: 15px;

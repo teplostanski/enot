@@ -2,7 +2,7 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 
-import './Content.css';
+import './Editor.css';
 import remarkGfm from 'remark-gfm';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -12,7 +12,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import DeleteNote from '../DeleteNote';
 
-interface ContentProps {
+interface EditorProps {
   activeNote: any;
   onUpdateNote: any;
   close: any;
@@ -20,7 +20,7 @@ interface ContentProps {
   id: string;
 }
 
-const Content = (props: ContentProps) => {
+const Editor = (props: EditorProps) => {
   const onEditField = ({ field, value }: { field: string; value: any }) => {
     props.onUpdateNote({
       ...props.activeNote,
@@ -41,7 +41,7 @@ const Content = (props: ContentProps) => {
       </div>
       <div className="editor__wrapper">
         <div className="editor__note_edit">
-          <input
+          {/*<input
             type="text"
             id="title"
             placeholder="Заголовок"
@@ -50,7 +50,7 @@ const Content = (props: ContentProps) => {
               onEditField({ field: 'title', value: event.target.value })
             }
             autoFocus
-          />
+          />*/}
           <TextareaAutosize
             id="body"
             placeholder="Начните писать здесь..."
@@ -61,7 +61,7 @@ const Content = (props: ContentProps) => {
           />
         </div>
         <div className="editor__note_preview">
-          <h1 className="preview-title">{props.activeNote.title}</h1>
+          {/*<h1 className="preview-title">{props.activeNote.title}</h1>*/}
           <Markdown
             remarkPlugins={[remarkGfm]}
             children={props.activeNote.body}
@@ -96,4 +96,4 @@ const Content = (props: ContentProps) => {
   );
 };
 
-export default Content;
+export default Editor;
