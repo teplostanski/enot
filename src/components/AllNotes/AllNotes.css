@@ -15,7 +15,7 @@
 .all-notes__note {
   padding: 17px 24px;
   cursor: pointer;
-  border: 1px solid var(--fg-primary);
+  border: 1px solid var(--border);
   margin: 8px 0;
   position: relative;
 }

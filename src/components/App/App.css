@@ -16,7 +16,7 @@ code {
 table,
 td,
 th {
-  border: 1px solid var(--fg-primary);
+  border: 1px solid var(--border);
   /*padding: 5px;*/
 }
 
@@ -53,14 +53,14 @@ table {
 }
 
 .line {
-  background: var(--fg-primary);
+  background: var(--border);
   grid-area: l;
 }
 
 .button {
   background: var(--fg-primary);
   color: var(--bg-primary);
-  border: 1px solid var(--fg-primary);
+  border: 1px solid var(--border);
   padding: 7px;
   cursor: pointer;
   height: fit-content; /*фикс высоты кнопок*/
@@ -72,11 +72,11 @@ table {
 }
 
 .delete-button {
-  border: 1px solid var(--bg-primary);
+  border: 1px solid var(--border);
 }
 
 .delete-button:hover {
   background: var(--error_fg);
   color: var(--bg-primary);
-  border: 1px solid var(--fg-primary);
+  border: 1px solid var(--border);
 }
