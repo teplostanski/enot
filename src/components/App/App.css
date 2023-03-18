@@ -58,8 +58,8 @@ table {
 }
 
 .button {
-  background: var(--fg-primary);
-  color: var(--bg-primary);
+  background: var(--bg-secondary);
+  color: var(--fg-secondary);
   border: 1px solid var(--border);
   padding: 7px;
   cursor: pointer;
@@ -67,8 +67,8 @@ table {
 }
 
 .button:hover {
-  background: var(--bg-primary);
-  color: var(--fg-primary);
+  background: var(--fg-primary);
+  color: var(--bg-primary);
 }
 
 .delete-button {

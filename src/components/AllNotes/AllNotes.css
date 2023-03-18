@@ -51,6 +51,6 @@
 }
 
 .all-notes__note:hover {
-  background: var(--fg-primary);
-  color: var(--bg-primary);
+  background: var(--bg-secondary);
+  color: var(--fg-secondary);
 }

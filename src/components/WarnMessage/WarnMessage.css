@@ -14,3 +14,15 @@
   white-space: pre-wrap;
   font-size: 12px;
 }
+
+@media (prefers-color-scheme: light) {
+  .warn-message {
+    background-color: #24292e;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .warn-message {
+    background-color: var(--bg-primary);
+  }
+}
