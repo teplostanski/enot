@@ -1,11 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import TextareaAutosize from 'react-textarea-autosize';
 import DeleteNote from '../DeleteNote';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
+import Preview from '../MarkdownPreview/MarkdownPreview';
 import './Editor.css';
 
 interface EditorProps {
@@ -46,35 +43,7 @@ const Editor = (props: EditorProps) => {
           }
         />
         <div className="separator"></div>
-
-        <Markdown
-          remarkPlugins={[remarkGfm]}
-          children={props.activeNote.body}
-          className="editor__preview"
-          components={{
-            code({ inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  {...props}
-                  children={String(children).replace(/\n$/, '')}
-                  style={dracula}
-                  language={match[1]}
-                  PreTag="div"
-                  showLineNumbers={true}
-                  customStyle={{
-                    borderRadius: '0',
-                    backgroundColor: '#24292e',
-                  }}
-                />
-              ) : (
-                <code {...props} className={className}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        />
+        <Preview content={props.activeNote.body} />
       </div>
     </div>
   );
