@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import DeleteNote from '../DeleteNote';
+import WarnMessage from '../WarnMessage';
 import './AllNotes.css';
 
 interface AllNotesProps {
@@ -16,9 +17,7 @@ const AllNotes = (props: AllNotesProps) => {
 
   return (
     <div className="all-notes">
-      {/*<div className="all-notes__header">
-        <button className="button" onClick={props.onAddNote}>Создать</button>
-      </div>*/}
+      <WarnMessage />
       <div className="all-notes__notes">
         {sortedNotes.map(
           ({

@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 
 import uuid from 'react-uuid';
 import Editor from '../Editor';
-import WarnMessage from '../WarnMessage';
 
 import { initNote } from '../../utils/constants';
 
@@ -93,7 +92,6 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Header onAddNote={onAddNote} />
-      <WarnMessage />
       <AllNotes
         notes={notes}
         onDeleteNote={onDeleteNote}

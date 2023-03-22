@@ -1,49 +1,26 @@
 .editor {
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  background: var(--bg-primary);
-  overflow-x: scroll;
-  /*border: 1px solid var(--fg-primary);*/
-
-}
-/*.editor__note_edit,
-.editor__note_preview {
-  height: 50vh;
-}*/
-
-/*.no-active-note {
-  width: 70%;
+  width: 100vw;
   height: 100vh;
-  line-height: 100vh;
-  text-align: center;
-  font-size: 2rem;
-  color: #999;
-}*/
-
-.editor__wrapper {
-  display: flex;
-  /*height: 90vh;*/
-  margin-top: 40px;
-  /*margin: 40px 15px 15px 15px;*/
-  /*border: 1px solid var(--border);*/
+  background: var(--bg-primary);
 }
 
-/* Editing */
-/*.editor__note_edit {
-  padding: 25px;
-}*/
+.editor__content {
+  height: calc(100vh - 55px);
+  width: calc(100vw - 20px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin: 45px 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 0.5px 1fr;
+  overflow-y: scroll;
+}
 
-.editor__note_edit input,
-textarea {
-  display: block;
+.editor__edit {
   border: none;
-  /*margin-bottom: 20px;*/
   background: var(--bg-primary);
   color: var(--fg-primary);
-  width: 50vw;
-  height: 100%;
-  margin: 1.2em 14px;
+  width: calc(50vw - 50px);
+  padding: 1.2em 14px;
   resize: none;
   font-size: inherit;
   font-family: 'jetbrains_mono';
@@ -51,37 +28,24 @@ textarea {
   box-sizing: border-box;
 }
 
-.editor__note_edit input {
-  height: 50px;
-  font-size: 2rem;
-  border-bottom: 1px solid var(--fg-primary);
-}
-
-/* Preview */
-.editor__note_preview {
-  border-left: 1px solid var(--border);
-  overflow-y: scroll;
-  /*background: rgba(0, 0, 0, 0.02);*/
-  overflow-wrap: break-word; /*фикс горизонтального скролла в превью*/
-}
-
-.preview-title {
-  padding: 10px 25px;
-  margin: 0;
-}
-
-.markdown-preview {
+.editor__preview {
   padding: 0 25px 25px 25px;
   font-size: 1rem;
   line-height: 2rem;
+  width: calc(50vw - 50px);
 }
 
 .editor__buttons {
   display: flex;
   justify-content: flex-start;
   gap: 1px;
-  padding: 1px;
+  padding: 6px 10px;
   width: 100%;
   position: fixed;
+  z-index: 1;
   background-color: var(--bg-primary);
+}
+
+.separator {
+  background-color: var(--border);
 }
