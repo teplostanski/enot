@@ -1,15 +1,10 @@
 .all-notes {
-  /*width: 60vw;*/
-  /*max-width: 900px;*/
-  /*min-width: 400px;*/
-  /*height: 85vh;*/
-  /*border: 1px solid var(--fg-primary);*/
   border-width: 0 1px;
   grid-area: c;
 }
 
 .all-notes__notes {
-  height: 80vh;
+  height: calc(100vh - 170px);
   overflow-y: scroll;
 }
 .all-notes__note {
@@ -19,10 +14,6 @@
   margin: 8px 0;
   position: relative;
 }
-
-/*.all-notes__note:last-child {
-  border-bottom: none;
-}*/
 
 .all-notes__note_title {
   display: flex;
