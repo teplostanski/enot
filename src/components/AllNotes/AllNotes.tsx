@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import DeleteNote from '../DeleteNote';
 import WarnMessage from '../WarnMessage';
 import './AllNotes.css';
 
@@ -40,9 +39,6 @@ const AllNotes = (props: AllNotesProps) => {
             >
               <div className="all-notes__note_title">
                 <strong>{title}</strong>
-                <div className="all-notes__button">
-                  <DeleteNote onDeleteNote={props.onDeleteNote} id={id} />
-                </div>
               </div>
 
               <p className="all-notes__note_body">{body}</p>

@@ -30,7 +30,7 @@ const Editor = (props: EditorProps) => {
         <button className="button" onClick={props.close}>
           Закрыть
         </button>
-        <DeleteNote onDeleteNote={props.onDeleteNote} id={props.id} />
+        <DeleteNote onDeleteNote={props.onDeleteNote} id={props.id} text={'Удалить'} />
       </div>
       <div className="editor__content">
         <TextareaAutosize

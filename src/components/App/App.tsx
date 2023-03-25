@@ -43,10 +43,6 @@ const App: React.FC = () => {
     if (newNote.id) {
       setActiveNote(newNote.id);
     }
-
-    //if (newNote.title == '') {
-    //  newNote.title = new Date().toLocaleDateString();
-    //}
   };
 
   const onDeleteNote = (noteId: any) => {
@@ -54,10 +50,8 @@ const App: React.FC = () => {
   };
 
   const onUpdateNote = (updatedNote: any) => {
-    //console.log(`updatedNote${JSON.stringify(updatedNote)}`);
 
     const updatedNotesArr = notes.map((note: any) => {
-      //console.log(`note${JSON.stringify(note)}`);
       if (note.id === updatedNote.id) {
         return updatedNote;
       }
@@ -79,12 +73,10 @@ const App: React.FC = () => {
     });
 
     setNotes(updatedNotesArr);
-    //console.log(`updatedNotesArr${JSON.stringify(updatedNotesArr)}`);
   };
 
   const getActiveNote = () => {
     const res = notes.find(({ id }: { id: any }) => id === activeNote);
-    //console.log(typeof res);
 
     return res;
   };
@@ -99,16 +91,13 @@ const App: React.FC = () => {
         setActiveNote={setActiveNote}
       />
       {activeNote && (
-        <>
-          {/*<button onClick={() => setActiveNote('')}>CLOSE</button>*/}
-          <Editor
-            activeNote={getActiveNote()}
-            onUpdateNote={onUpdateNote}
-            close={() => setActiveNote('')}
-            onDeleteNote={onDeleteNote}
-            id={activeNote}
-          />
-        </>
+        <Editor
+          activeNote={getActiveNote()}
+          onUpdateNote={onUpdateNote}
+          close={() => setActiveNote('')}
+          onDeleteNote={onDeleteNote}
+          id={activeNote}
+        />
       )}
       <Footer />
     </div>
