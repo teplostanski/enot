@@ -1,0 +1,17 @@
+.no-notes-message {
+  grid-area: c;
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-notes-message__container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.no-notes-message__text {
+  font-size: 2em;
+  font-family: 'montserratlight';
+}

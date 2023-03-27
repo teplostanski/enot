@@ -12,6 +12,7 @@ import uuid from 'react-uuid';
 import Editor from '../Editor';
 
 import { initNote } from '../../utils/constants';
+import NoNotesMessage from '../NoNotesMessage';
 
 type NewNote = {
   id: string;
@@ -50,7 +51,6 @@ const App: React.FC = () => {
   };
 
   const onUpdateNote = (updatedNote: any) => {
-
     const updatedNotesArr = notes.map((note: any) => {
       if (note.id === updatedNote.id) {
         return updatedNote;
@@ -84,12 +84,16 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Header onAddNote={onAddNote} />
-      <AllNotes
-        notes={notes}
-        onDeleteNote={onDeleteNote}
-        activeNote={activeNote}
-        setActiveNote={setActiveNote}
-      />
+      {notes.length !== 0 ? (
+        <AllNotes
+          notes={notes}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+        />
+      ) : (
+        <NoNotesMessage />
+      )}
       {activeNote && (
         <Editor
           activeNote={getActiveNote()}

@@ -47,7 +47,7 @@ h1 {
   display: grid;
   /*justify-items: center;*/
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr 1px 0fr 20px;
+  grid-template-rows: 70px 1px 0fr 20px;
   grid-template-areas:
     '. . . h h h h h h . . .'
     'l l l l l l l l l l l l'

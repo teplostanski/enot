@@ -8,6 +8,7 @@ grid-area: h;
   padding: 0 25px;
   justify-content: center;
   align-items: center;
+  height: 70px;
 }
 
 .header__content {
