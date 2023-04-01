@@ -1,13 +1,13 @@
-.all-notes {
+.list-notes {
   border-width: 0 1px;
   grid-area: c;
 }
 
-.all-notes__notes {
+.list-notes__items {
   height: calc(100vh - 170px);
   overflow-y: scroll;
 }
-.all-notes__note {
+.list-notes__item {
   padding: 17px 24px;
   cursor: pointer;
   border: 1px solid var(--border);
@@ -15,33 +15,33 @@
   position: relative;
 }
 
-.all-notes__note_title {
+.list-notes__item_title {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   width: 76%;
 }
 
-.all-notes__button {
+.list-notes__button {
   position: absolute;
   right: 24px;
 }
-.all-notes__note_body {
+.list-notes__item_body {
   white-space: break-spaces;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.all-notes__note p {
+.list-notes__item p {
   margin: 10px 0;
   max-height: 140px;
 }
-.all-notes__note small {
+.list-notes__item small {
   display: block;
   font-family: 'montserratlight';
 }
 
-.all-notes__note:hover {
+.list-notes__item:hover {
   background: var(--bg-secondary);
   color: var(--fg-secondary);
 }

@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './App.css';
 import '../../index.css';
-import AllNotes from '../AllNotes';
+import ListNotes from '../ListNotes';
 import { useEffect, useState } from 'react';
 
 import uuid from 'react-uuid';
@@ -85,7 +85,7 @@ const App: React.FC = () => {
     <div className="app">
       <Header onAddNote={onAddNote} />
       {notes.length !== 0 ? (
-        <AllNotes
+        <ListNotes
           notes={notes}
           onDeleteNote={onDeleteNote}
           activeNote={activeNote}
