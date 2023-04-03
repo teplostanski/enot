@@ -123,15 +123,12 @@ h1 {
 
 @media only screen and (max-width: 425px) {
   .app {
+    font-size: 16px;
     grid-template-rows: 70px 1px 0fr 20px;
     grid-template-areas:
       'h h h h h h h h h h h h'
       'l l l l l l l l l l l l'
       'c c c c c c c c c c c c'
       'f f f f f f f f f f f f';
-  }
-
-  .editor {
-    position: absolute;
   }
 }

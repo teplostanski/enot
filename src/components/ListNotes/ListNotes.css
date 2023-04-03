@@ -34,7 +34,7 @@
 
 .list-notes__item p {
   margin: 10px 0;
-  max-height: 140px;
+  max-height: 70px;
 }
 .list-notes__item small {
   display: block;
