@@ -131,7 +131,7 @@ h1 {
       'f f f f f f f f f f f f';
   }
 
-  /*.list-notes {
-    margin: 0 25px;
-}*/
+  .editor {
+    position: absolute;
+  }
 }
