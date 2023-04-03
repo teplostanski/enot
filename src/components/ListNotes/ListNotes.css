@@ -4,7 +4,7 @@
 }
 
 .list-notes__items {
-  height: calc(100vh - 170px);
+  height: calc(100vh - 188px);
   overflow-y: scroll;
 }
 .list-notes__item {
