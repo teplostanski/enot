@@ -8,12 +8,16 @@
   margin-top: 10px;
   text-align: center;
   text-transform: uppercase;
+  display: none;
 }
 
 .warn-message__text {
   padding: 0 15px;
   white-space: pre-wrap;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  height: 55px;
 }
 
 @media (prefers-color-scheme: light) {

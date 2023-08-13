@@ -8,6 +8,7 @@ grid-area: h;
   padding: 0 25px;
   justify-content: center;
   align-items: center;
+  height: 70px;
 }
 
 .header__content {
@@ -23,7 +24,8 @@ grid-area: h;
 
 .header__logo_text {
   margin: 0;
-  font-family: "montserratblack";
+  font-family: 'Manrope-ExtraBold';
+  font-weight: 900;
   font-size: 42px;
 }
 

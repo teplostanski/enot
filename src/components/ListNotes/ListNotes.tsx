@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import DeleteNote from '../DeleteNote';
 import WarnMessage from '../WarnMessage';
-import './AllNotes.css';
+import './ListNotes.css';
 
-interface AllNotesProps {
+interface ListNotesProps {
   notes: any;
   onDeleteNote: any;
   activeNote: any;
   setActiveNote: any;
 }
 
-const AllNotes = (props: AllNotesProps) => {
+const ListNotes = (props: ListNotesProps) => {
   const sortedNotes = props.notes.sort(
     (a: any, b: any) => b.lastModified - a.lastModified
   );
 
   return (
-    <div className="all-notes">
+    <div className="list-notes">
       <WarnMessage />
-      <div className="all-notes__notes">
+      <div className="list-notes__items">
         {sortedNotes.map(
           ({
             id,
@@ -32,20 +31,17 @@ const AllNotes = (props: AllNotesProps) => {
             lastModified: number;
           }) => (
             <div
-              className={`all-notes__note ${
+              className={`list-notes__item ${
                 id === props.activeNote && 'active'
               }`}
               onClick={() => props.setActiveNote(id)}
               key={id}
             >
-              <div className="all-notes__note_title">
+              <div className="list-notes__item_title">
                 <strong>{title}</strong>
-                <div className="all-notes__button">
-                  <DeleteNote onDeleteNote={props.onDeleteNote} id={id} />
-                </div>
               </div>
 
-              <p className="all-notes__note_body">{body}</p>
+              <p className="list-notes__item_body">{body}</p>
               <small className="note-meta">
                 Последние изменения{' '}
                 {new Date(lastModified).toLocaleDateString('ru-RU', {
@@ -61,4 +57,4 @@ const AllNotes = (props: AllNotesProps) => {
   );
 };
 
-export default AllNotes;
+export default ListNotes;

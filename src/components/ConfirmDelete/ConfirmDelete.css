@@ -1,0 +1,12 @@
+.confirm-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.confirm-delete__buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}

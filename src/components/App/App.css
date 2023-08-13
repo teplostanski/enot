@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  letter-spacing: 0.8px;
 }
 
 ::-webkit-scrollbar {
@@ -10,7 +11,7 @@ code {
   background: var(--fg-primary);
   color: var(--bg-primary);
   padding: 3px 5px;
-  font-family: 'montserratregular';
+  font-family: 'Manrope-Regular';
 }
 
 table,
@@ -34,7 +35,7 @@ h1 {
 }
 
 .app {
-  font-family: 'montserratregular';
+  font-family: 'Manrope-Regular';
   font-size: 15px;
   background: var(--bg-primary);
   color: var(--fg-primary);
@@ -47,7 +48,7 @@ h1 {
   display: grid;
   /*justify-items: center;*/
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr 1px 0fr 20px;
+  grid-template-rows: 70px 1px 0fr 20px;
   grid-template-areas:
     '. . . h h h h h h . . .'
     'l l l l l l l l l l l l'
@@ -64,6 +65,7 @@ h1 {
   background: var(--bg-secondary);
   color: var(--fg-secondary);
   border: 1px solid var(--border);
+  border-radius: 12px;
   padding: 7px;
   cursor: pointer;
   height: fit-content; /*фикс высоты кнопок*/
@@ -82,4 +84,53 @@ h1 {
   background: var(--error_fg);
   color: var(--bg-primary);
   border: 1px solid var(--border);
+}
+
+@media only screen and (max-width: 820px) {
+  .app {
+    grid-template-rows: 70px 1px 0fr 20px;
+    grid-template-areas:
+      '. h h h h h h h h h h .'
+      'l l l l l l l l l l l l'
+      '. . c c c c c c c c . .'
+      'f f f f f f f f f f f f';
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .app {
+    grid-template-rows: 70px 1px 0fr 20px;
+    grid-template-areas:
+      '. h h h h h h h h h h .'
+      'l l l l l l l l l l l l'
+      '. c c c c c c c c c c .'
+      'f f f f f f f f f f f f';
+  }
+
+  .list-notes {
+    margin: 0 25px;
+  }
+}
+/*
+@media only screen and (max-width: 425px) {
+  .app {
+    grid-template-rows: 70px 1px 0fr 20px;
+    grid-template-areas:
+      '. h h h h h h h h h h .'
+      'l l l l l l l l l l l l'
+      '. c c c c c c c c c c .'
+      'f f f f f f f f f f f f';
+  }
+}*/
+
+@media only screen and (max-width: 425px) {
+  .app {
+    font-size: 16px;
+    grid-template-rows: 70px 1px 0fr 20px;
+    grid-template-areas:
+      'h h h h h h h h h h h h'
+      'l l l l l l l l l l l l'
+      'c c c c c c c c c c c c'
+      'f f f f f f f f f f f f';
+  }
 }

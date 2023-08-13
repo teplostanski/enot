@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   background: var(--bg-primary);
+  z-index: 1;
 }
 
 .editor__content {
@@ -9,6 +10,8 @@
   width: calc(100vw - 20px);
   overflow: hidden;
   border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-secondary);
   margin: 45px 10px 10px;
   display: grid;
   grid-template-columns: 1fr 0.5px 1fr;
@@ -17,7 +20,7 @@
 
 .editor__edit {
   border: none;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   color: var(--fg-primary);
   width: calc(50vw - 50px);
   padding: 1.2em 14px;
@@ -48,4 +51,24 @@
 
 .separator {
   background-color: var(--border);
+}
+
+@media only screen and (max-width: 425px) {
+  .editor {
+    position: absolute;
+  }
+
+  .editor__buttons {
+    padding: 5px 10px;
+  }
+
+  .editor__preview {
+    padding: 0 8px 8px 8px;
+    width: calc(50vw - 11px);
+    overflow-wrap: break-word;
+  }
+
+  .editor__edit {
+    width: calc(50vw - 12px);
+  }
 }

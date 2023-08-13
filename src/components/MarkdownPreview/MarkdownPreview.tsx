@@ -35,7 +35,6 @@ const MarkdownPreview = ({ content }: { content: string }) => {
           },
         }}
       />
-      ;
     </>
   );
 };
