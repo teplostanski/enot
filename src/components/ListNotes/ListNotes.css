@@ -10,7 +10,9 @@
 .list-notes__item {
   padding: 17px 24px;
   cursor: pointer;
+  background: var(--bg-secondary);
   border: 1px solid var(--border);
+  border-radius: 16px;
   margin: 8px 0;
   position: relative;
 }
@@ -38,10 +40,10 @@
 }
 .list-notes__item small {
   display: block;
-  font-family: 'montserratlight';
+  font-family: 'Manrope-Light';
 }
 
 .list-notes__item:hover {
-  background: var(--bg-secondary);
-  color: var(--fg-secondary);
+  transition: all .1s;
+  border: 1.5px solid var(--fg-secondary)
 }

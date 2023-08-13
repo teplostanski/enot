@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import './Header.css';
-import logoSrc from '../../assets/logo.png';
 
 interface HeaderProps {
   onAddNote: any;
@@ -12,19 +11,14 @@ const Header = (props: HeaderProps) => {
       <div className="header header__container">
         <div className="header__content">
           <h1 className="header__logo_text">
-            aned
-            <img
-              className="header__logo_img"
-              src={logoSrc}
-              alt="seedling emoji"
-            />
+            enot
           </h1>
           <button className="button" onClick={props.onAddNote}>
             Создать
           </button>
         </div>
       </div>
-      <div className="line"></div>
+      {/*<div className="line"></div>*/}
     </>
   );
 };

@@ -1,12 +1,11 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //import React, { useState } from 'react';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import './App.css';
-import '../../index.css';
-import ListNotes from '../ListNotes';
 import { useEffect, useState } from 'react';
+import '../../index.css';
+import Header from '../Header/Header';
+import ListNotes from '../ListNotes';
+import './App.css';
 
 import uuid from 'react-uuid';
 import Editor from '../Editor';
@@ -103,7 +102,6 @@ const App: React.FC = () => {
           id={activeNote}
         />
       )}
-      <Footer />
     </div>
   );
 };

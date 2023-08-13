@@ -24,7 +24,8 @@ grid-area: h;
 
 .header__logo_text {
   margin: 0;
-  font-family: "montserratblack";
+  font-family: 'Manrope-ExtraBold';
+  font-weight: 900;
   font-size: 42px;
 }
 

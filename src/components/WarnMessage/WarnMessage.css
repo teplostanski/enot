@@ -8,6 +8,7 @@
   margin-top: 10px;
   text-align: center;
   text-transform: uppercase;
+  display: none;
 }
 
 .warn-message__text {

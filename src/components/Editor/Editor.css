@@ -10,6 +10,8 @@
   width: calc(100vw - 20px);
   overflow: hidden;
   border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-secondary);
   margin: 45px 10px 10px;
   display: grid;
   grid-template-columns: 1fr 0.5px 1fr;
@@ -18,7 +20,7 @@
 
 .editor__edit {
   border: none;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   color: var(--fg-primary);
   width: calc(50vw - 50px);
   padding: 1.2em 14px;

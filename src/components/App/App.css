@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  letter-spacing: 0.8px;
 }
 
 ::-webkit-scrollbar {
@@ -10,7 +11,7 @@ code {
   background: var(--fg-primary);
   color: var(--bg-primary);
   padding: 3px 5px;
-  font-family: 'montserratregular';
+  font-family: 'Manrope-Regular';
 }
 
 table,
@@ -34,7 +35,7 @@ h1 {
 }
 
 .app {
-  font-family: 'montserratregular';
+  font-family: 'Manrope-Regular';
   font-size: 15px;
   background: var(--bg-primary);
   color: var(--fg-primary);
@@ -64,6 +65,7 @@ h1 {
   background: var(--bg-secondary);
   color: var(--fg-secondary);
   border: 1px solid var(--border);
+  border-radius: 12px;
   padding: 7px;
   cursor: pointer;
   height: fit-content; /*фикс высоты кнопок*/
