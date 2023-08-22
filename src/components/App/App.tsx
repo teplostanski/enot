@@ -45,7 +45,7 @@ const App: React.FC = () => {
     }
   }, [activeNote, loc.pathname]);
 
-  console.log(loc.pathname === `/note/${activeNote}`);
+  //console.log(loc.pathname === `/note/${activeNote}`);
 
   const onAddNote = () => {
     const newNote: NewNote = {

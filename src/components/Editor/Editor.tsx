@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import DeleteNote from '../DeleteNote';
 import Preview from '../MarkdownPreview/MarkdownPreview';
+import { toggleObjectValue } from '../../utils';
+import { IToggleObjectValue } from '../../types';
 import './Editor.css';
 
 interface EditorProps {
@@ -14,6 +16,33 @@ interface EditorProps {
 }
 
 const Editor = (props: EditorProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const [view, setView] = useState<IToggleObjectValue>({
+    live: true,
+    edit: false,
+    preview: false,
+  });
+  
+  const [editHeight, setEditHeight] = useState<number | undefined>(10);
+
+  /**
+   * Присваевается функция toggleObjectValue
+   * с замыканием на объекте стейта view.
+   * Мутирует замыкаемый объект напрямую,
+   * не возвращая новый объект
+   */
+  const toggleViewValue = toggleObjectValue(view);
+
+  const handleView = (value: string) => {
+    toggleViewValue(value);
+
+    /**
+     * Разворачивает старый объект для ре-рендера
+     */
+    setView({ ...view });
+  };
+
   const onEditField = ({ field, value }: { field: string; value: any }) => {
     props.onUpdateNote({
       ...props.activeNote,
@@ -22,20 +51,16 @@ const Editor = (props: EditorProps) => {
     });
   };
 
-  if (!props.activeNote) return null;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [editHeight, setEditHeight] = useState<number | undefined>(10);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const ref = useRef<HTMLDivElement>(null);
-  //const editHei = 10 || ref.current?.getBoundingClientRect().height
-  //console.log(editHei);
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    return setEditHeight(ref.current?.getBoundingClientRect().height);
+    /**
+     * Если элемент не undefined, получает его высоту
+     */
+    if (ref.current) {
+      return setEditHeight(ref.current.getBoundingClientRect().height);
+    }
   }, []);
 
-  console.log(editHeight && editHeight / 19);
+  //if (!props.activeNote) return null;
 
   return (
     <div className="editor">
@@ -48,22 +73,35 @@ const Editor = (props: EditorProps) => {
           id={props.id}
           text={'Удалить'}
         />
+        <button className="button" onClick={() => handleView('edit')}>
+          Edit
+        </button>
+        <button className="button" onClick={() => handleView('preview')}>
+          Preview
+        </button>
+        <button className="button" onClick={() => handleView('live')}>
+          Live
+        </button>
       </div>
       <div className="editor__content">
-        <div ref={ref} className="editor__edit">
-          <TextareaAutosize
-            minRows={editHeight && editHeight / 19 - 2}
-            onHeightChange={(height) => console.log(height)}
-            id="body"
-            placeholder="Начните писать здесь..."
-            value={props.activeNote.body}
-            onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
-              onEditField({ field: 'body', value: event.target.value })
-            }
-          />
-        </div>
+        {view.live || view.edit ? (
+          <div ref={ref} className="editor__edit">
+            <TextareaAutosize
+              minRows={editHeight && editHeight / 19 - 2}
+              id="body"
+              placeholder="Начните писать здесь..."
+              value={props.activeNote.body}
+              onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+                onEditField({ field: 'body', value: event.target.value })
+              }
+            />
+          </div>
+        ) : null}
+
         {/*<div className="separator"></div>*/}
-        <Preview content={props.activeNote.body} />
+        {view.live || view.preview ? (
+          <Preview content={props.activeNote.body} />
+        ) : null}
       </div>
     </div>
   );
