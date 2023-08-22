@@ -12,6 +12,7 @@ import Editor from '../Editor';
 
 import { initNote } from '../../utils/constants';
 import NoNotesMessage from '../NoNotesMessage';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 
 type NewNote = {
   id: string;
@@ -21,15 +22,30 @@ type NewNote = {
 };
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
+  const loc = useLocation();
+
   const [notes, setNotes] = useState(
     localStorage.notes ? JSON.parse(localStorage.notes) : [initNote]
   );
-  const [activeNote, setActiveNote] = useState('');
+  const [activeNote, setActiveNote] = useState(
+    localStorage.id ? JSON.parse(localStorage.id) : ''
+  );
   console.log(activeNote);
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
+
+  useEffect(() => {
+    if (loc.pathname !== `/note/${activeNote}`) {
+      localStorage.setItem('id', '');
+    } else {
+      localStorage.setItem('id', JSON.stringify(activeNote));
+    }
+  }, [activeNote, loc.pathname]);
+
+  console.log(loc.pathname === `/note/${activeNote}`);
 
   const onAddNote = () => {
     const newNote: NewNote = {
@@ -43,10 +59,13 @@ const App: React.FC = () => {
     if (newNote.id) {
       setActiveNote(newNote.id);
     }
+    
+    navigate(`/note/${newNote.id}`)
   };
 
   const onDeleteNote = (noteId: any) => {
     setNotes(notes.filter(({ id }: { id: any }) => id !== noteId));
+    navigate('/')
   };
 
   const onUpdateNote = (updatedNote: any) => {
@@ -80,20 +99,46 @@ const App: React.FC = () => {
     return res;
   };
 
+  const onClose = () => {
+    setActiveNote('');
+    navigate('/');
+  };
+
   return (
     <div className="app">
-      <Header onAddNote={onAddNote} />
-      {notes.length !== 0 ? (
-        <ListNotes
-          notes={notes}
-          onDeleteNote={onDeleteNote}
-          activeNote={activeNote}
-          setActiveNote={setActiveNote}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header onAddNote={onAddNote} />
+              <ListNotes
+                notes={notes}
+                onDeleteNote={onDeleteNote}
+                activeNote={activeNote}
+                setActiveNote={setActiveNote}
+              />
+            </>
+            //) : (
+            //  <NoNotesMessage />
+            //)}
+          }
         />
-      ) : (
-        <NoNotesMessage />
-      )}
-      {activeNote && (
+
+        <Route
+          path="/note/:id"
+          element={
+            <Editor
+              activeNote={getActiveNote()}
+              onUpdateNote={onUpdateNote}
+              close={onClose}
+              onDeleteNote={onDeleteNote}
+              id={activeNote}
+            />
+          }
+        />
+      </Routes>
+      {/*{activeNote && (
         <Editor
           activeNote={getActiveNote()}
           onUpdateNote={onUpdateNote}
@@ -101,7 +146,7 @@ const App: React.FC = () => {
           onDeleteNote={onDeleteNote}
           id={activeNote}
         />
-      )}
+      )}*/}
     </div>
   );
 };

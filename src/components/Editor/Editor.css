@@ -9,33 +9,55 @@
   height: calc(100vh - 55px);
   width: calc(100vw - 20px);
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--bg-secondary);
+  /*border: 1px solid var(--border);*/
+  /*border-radius: 16px;*/
+  /*background: var(--bg-secondary);*/
   margin: 45px 10px 10px;
-  display: grid;
-  grid-template-columns: 1fr 0.5px 1fr;
-  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  /*grid-template-columns: 1fr 1fr;*/
+  /*overflow-y: scroll;*/
 }
 
 .editor__edit {
-  border: none;
   background: var(--bg-secondary);
-  color: var(--fg-primary);
-  width: calc(50vw - 50px);
+  border: 1px solid var(--border);
+  border-radius: 16px 6px 6px 16px;
+  height: calc(100vh - 55px);
+
+  width: 100%;
   padding: 1.2em 14px;
   resize: none;
   font-size: inherit;
   font-family: 'jetbrains_mono';
   outline: var(--fg-primary);
   box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.editor__edit textarea {
+  border: none;
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--fg-primary);
+  resize: none;
+}
+
+.editor__edit textarea:focus {
+  outline: 0;
 }
 
 .editor__preview {
   padding: 0 25px 25px 25px;
   font-size: 1rem;
   line-height: 2rem;
-  width: calc(50vw - 50px);
+  width: 100%;
+  height: calc(100vh - 55px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px 16px 16px 6px;
+  overflow-y: scroll;
 }
 
 .editor__buttons {

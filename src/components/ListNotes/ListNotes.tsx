@@ -2,6 +2,8 @@
 import WarnMessage from '../WarnMessage';
 import './ListNotes.css';
 
+import { useNavigate, useLocation } from 'react-router-dom';
+
 interface ListNotesProps {
   notes: any;
   onDeleteNote: any;
@@ -10,14 +12,24 @@ interface ListNotesProps {
 }
 
 const ListNotes = (props: ListNotesProps) => {
+  
+  const navigate = useNavigate()
+  const loc = useLocation()
+  console.log(loc);
+  
   const sortedNotes = props.notes.sort(
     (a: any, b: any) => b.lastModified - a.lastModified
   );
+  
+  const hansdleActiveNote = (id: any) => {
+    props.setActiveNote(id)
+    navigate(`/note/${id}`)
+  }
 
   return (
     <div className="list-notes">
       <WarnMessage />
-      <div className="list-notes__items">
+      <ul className="list-notes__items">
         {sortedNotes.map(
           ({
             id,
@@ -30,29 +42,30 @@ const ListNotes = (props: ListNotesProps) => {
             body: any;
             lastModified: number;
           }) => (
-            <div
-              className={`list-notes__item ${
-                id === props.activeNote && 'active'
-              }`}
-              onClick={() => props.setActiveNote(id)}
-              key={id}
-            >
-              <div className="list-notes__item_title">
-                <strong>{title}</strong>
-              </div>
+            //<>
+              <li 
+                key={id}
+                className={`list-notes__item ${
+                  id === props.activeNote && 'active'
+                }`}
+                onClick={()=>hansdleActiveNote(id)}
+              >
+                <div className="list-notes__item_title">
+                  <strong>{title}</strong>
+                </div>
 
-              <p className="list-notes__item_body">{body}</p>
-              <small className="note-meta">
-                Последние изменения{' '}
-                {new Date(lastModified).toLocaleDateString('ru-RU', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </small>
-            </div>
+                <p className="list-notes__item_body">{body}</p>
+                <small className="note-meta">
+                  Последние изменения{' '}
+                  {new Date(lastModified).toLocaleDateString('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </small>
+              </li>
           )
         )}
-      </div>
+      </ul>
     </div>
   );
 };
