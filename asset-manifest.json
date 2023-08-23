@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.530e79bc.css",
-    "main.js": "./static/js/main.a4b92053.js",
+    "main.css": "./static/css/main.262c8ca0.css",
+    "main.js": "./static/js/main.b8dc7274.js",
     "static/media/Manrope-Light.ttf": "./static/media/Manrope-Light.452d7eadd88137be5705.ttf",
     "static/media/Manrope-Thin.ttf": "./static/media/Manrope-Thin.64827b2e027b52a12255.ttf",
     "static/media/Manrope-Regular.ttf": "./static/media/Manrope-Regular.892a89f7015e492f6e21.ttf",
@@ -26,11 +26,11 @@
     "static/media/Manrope-Thin.woff2": "./static/media/Manrope-Thin.270c4d6c4c0046a961da.woff2",
     "static/media/Manrope-ExtraBold.woff2": "./static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
     "index.html": "./index.html",
-    "main.530e79bc.css.map": "./static/css/main.530e79bc.css.map",
-    "main.a4b92053.js.map": "./static/js/main.a4b92053.js.map"
+    "main.262c8ca0.css.map": "./static/css/main.262c8ca0.css.map",
+    "main.b8dc7274.js.map": "./static/js/main.b8dc7274.js.map"
   },
   "entrypoints": [
-    "static/css/main.530e79bc.css",
-    "static/js/main.a4b92053.js"
+    "static/css/main.262c8ca0.css",
+    "static/js/main.b8dc7274.js"
   ]
 }
