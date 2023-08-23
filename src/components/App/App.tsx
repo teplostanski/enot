@@ -11,8 +11,10 @@ import uuid from 'react-uuid';
 import Editor from '../Editor';
 
 import { initNote } from '../../utils/constants';
-import NoNotesMessage from '../NoNotesMessage';
+//import NoNotesMessage from '../NoNotesMessage';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 type NewNote = {
   id: string;
@@ -23,29 +25,26 @@ type NewNote = {
 
 const App: React.FC = () => {
   const navigate = useNavigate();
-  const loc = useLocation();
+  const location = useLocation();
 
-  const [notes, setNotes] = useState(
-    localStorage.notes ? JSON.parse(localStorage.notes) : [initNote]
-  );
-  const [activeNote, setActiveNote] = useState(
-    localStorage.id ? JSON.parse(localStorage.id) : ''
-  );
+  const [notes, setNotes] = useLocalStorage('notes', [initNote]);
+
+  const [activeNote, setActiveNote] = useLocalStorage('id', '');
   console.log(activeNote);
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
-  }, [notes]);
+    setNotes(notes);
+  }, [notes, setNotes]);
 
   useEffect(() => {
-    if (loc.pathname !== `/note/${activeNote}`) {
-      localStorage.setItem('id', '');
+    if (location.pathname !== `/note/${activeNote}`) {
+      setActiveNote('');
     } else {
-      localStorage.setItem('id', JSON.stringify(activeNote));
+      setActiveNote(activeNote);
     }
-  }, [activeNote, loc.pathname]);
+  }, [activeNote, location.pathname, setActiveNote]);
 
-  //console.log(loc.pathname === `/note/${activeNote}`);
+  //console.log(location.pathname === `/note/${activeNote}`);
 
   const onAddNote = () => {
     const newNote: NewNote = {
@@ -59,13 +58,13 @@ const App: React.FC = () => {
     if (newNote.id) {
       setActiveNote(newNote.id);
     }
-    
-    navigate(`/note/${newNote.id}`)
+
+    navigate(`/note/${newNote.id}`);
   };
 
   const onDeleteNote = (noteId: any) => {
     setNotes(notes.filter(({ id }: { id: any }) => id !== noteId));
-    navigate('/')
+    navigate('/');
   };
 
   const onUpdateNote = (updatedNote: any) => {

@@ -15,7 +15,7 @@
   margin: 45px 10px 10px;
   display: flex;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
   /*grid-template-columns: 1fr 1fr;*/
   /*overflow-y: scroll;*/
 }
@@ -34,6 +34,10 @@
   outline: var(--fg-primary);
   box-sizing: border-box;
   overflow-y: scroll;
+}
+
+.editor__edit_only {
+  border-radius: 16px;
 }
 
 .editor__edit textarea {
@@ -60,19 +64,20 @@
   overflow-y: scroll;
 }
 
+.editor__preview_only {
+  border-radius: 16px;
+}
+
 .editor__buttons {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: flex-start;
-  gap: 1px;
+  gap: 4px;
   padding: 6px 10px;
   width: 100%;
   position: fixed;
   z-index: 1;
   background-color: var(--bg-primary);
-}
-
-.separator {
-  background-color: var(--border);
 }
 
 @media only screen and (max-width: 425px) {
@@ -86,11 +91,11 @@
 
   .editor__preview {
     padding: 0 8px 8px 8px;
-    width: calc(50vw - 11px);
+    /*width: calc(50vw - 11px);*/
     overflow-wrap: break-word;
   }
 
-  .editor__edit {
+  /*.editor__edit {
     width: calc(50vw - 12px);
-  }
+  }*/
 }

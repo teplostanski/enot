@@ -1,10 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useRef, useState } from 'react';
+
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import cn from 'classnames';
 import TextareaAutosize from 'react-textarea-autosize';
+import useRerender from '../../hooks/useRerender';
+import { IToggleObjectValue } from '../../types';
+import { toggleObjectValue } from '../../utils';
 import DeleteNote from '../DeleteNote';
 import Preview from '../MarkdownPreview/MarkdownPreview';
-import { toggleObjectValue } from '../../utils';
-import { IToggleObjectValue } from '../../types';
 import './Editor.css';
 
 interface EditorProps {
@@ -17,14 +21,16 @@ interface EditorProps {
 
 const Editor = (props: EditorProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const [view, setView] = useState<IToggleObjectValue>({
     live: true,
     edit: false,
     preview: false,
   });
-  
+
   const [editHeight, setEditHeight] = useState<number | undefined>(10);
+  
+  const {windowHeight, windowWidth, scroll, scrollH} = useRerender()
 
   /**
    * Присваевается функция toggleObjectValue
@@ -38,7 +44,7 @@ const Editor = (props: EditorProps) => {
     toggleViewValue(value);
 
     /**
-     * Разворачивает старый объект для ре-рендера
+     * Разворачивает объект для ре-рендера
      */
     setView({ ...view });
   };
@@ -60,7 +66,14 @@ const Editor = (props: EditorProps) => {
     }
   }, []);
 
-  //if (!props.activeNote) return null;
+  useEffect(() => {
+    /**
+     * Если ширина экрана меньше 724px включить режим просмотра 'preview'
+     */
+    if (document.body.clientWidth < 724) {
+      handleView('preview');
+    }
+  }, [windowHeight, windowWidth, scroll]);
 
   return (
     <div className="editor">
@@ -85,22 +98,35 @@ const Editor = (props: EditorProps) => {
       </div>
       <div className="editor__content">
         {view.live || view.edit ? (
-          <div ref={ref} className="editor__edit">
+          <div
+            ref={ref}
+            className={
+              view.edit
+                ? cn('editor__edit_only', 'editor__edit')
+                : 'editor__edit'
+            }
+          >
             <TextareaAutosize
               minRows={editHeight && editHeight / 19 - 2}
               id="body"
               placeholder="Начните писать здесь..."
               value={props.activeNote.body}
-              onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+              onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
                 onEditField({ field: 'body', value: event.target.value })
               }
             />
           </div>
         ) : null}
 
-        {/*<div className="separator"></div>*/}
         {view.live || view.preview ? (
-          <Preview content={props.activeNote.body} />
+          <Preview
+            className={
+              view.preview
+                ? cn('editor__preview_only', 'editor__preview')
+                : 'editor__preview'
+            }
+            content={props.activeNote.body}
+          />
         ) : null}
       </div>
     </div>
