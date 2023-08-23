@@ -1,25 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-//import React from 'react';
-//import Markdown from 'react-markdown';
+import { useState } from 'react'
+import ConfirmDelete from '../ConfirmDelete/ConfirmDelete'
+import Modal from '../Modal/Modal'
+import { TDeleteNoteProps } from '../../types'
 
-import { useState } from 'react';
-import ConfirmDelete from '../ConfirmDelete';
-import Modal from '../Modal';
-
-interface DeleteNoteProps {
-  onDeleteNote: any;
-  id: any;
-  text: string;
-}
-
-const DeleteNote = (props: DeleteNoteProps) => {
-  const [open, setOpen] = useState(false);
+const DeleteNote = (props: TDeleteNoteProps) => {
+  const [open, setOpen] = useState(false)
   return (
     <>
       <button
-        className="button delete-button"
+        className='button delete-button'
         onClick={() => {
-          setOpen(true);
+          setOpen(true)
         }}
       >
         {props.text}
@@ -31,12 +22,12 @@ const DeleteNote = (props: DeleteNoteProps) => {
           yes={'Да'}
           no={'Нет'}
           setOpen={() => {
-            setOpen(false);
+            setOpen(false)
           }}
         />
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default DeleteNote;
+export default DeleteNote

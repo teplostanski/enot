@@ -1,7 +1,7 @@
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula'
 
 const MarkdownPreview = ({ content, className }: { content: string; className?: string }) => {
   return (
@@ -11,14 +11,14 @@ const MarkdownPreview = ({ content, className }: { content: string; className?: 
       className={className}
       components={{
         code({ inline, className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '');
+          const match = /language-(\w+)/.exec(className || '')
           return !inline && match ? (
             <SyntaxHighlighter
               {...props}
               children={String(children).replace(/\n$/, '')}
               style={dracula}
               language={match[1]}
-              PreTag="div"
+              PreTag='div'
               showLineNumbers={true}
               customStyle={{
                 borderRadius: '0',
@@ -29,11 +29,11 @@ const MarkdownPreview = ({ content, className }: { content: string; className?: 
             <code {...props} className={className}>
               {children}
             </code>
-          );
+          )
         },
       }}
     />
-  );
-};
+  )
+}
 
-export default MarkdownPreview;
+export default MarkdownPreview

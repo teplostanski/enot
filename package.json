@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run lint && tsc && react-scripts build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "deploy": "npm run build && cp ./CNAME ./build && gh-pages -d build",
-    "testDeploy": "git push origin develop:test-deploy"
+    "build": "npm run lint && npm run prettier && tsc && react-scripts build",
+    "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\"",
+    "deploy": "rm -rf ./build && npm run build && cp ./CNAME ./build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -25,7 +25,8 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-textarea-autosize": "^8.4.1",
     "react-uuid": "^2.0.0",
-    "remark-gfm": "^3.0.1"
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.66.1"
   },
   "devDependencies": {
     "@types/node": "^16.18.30",

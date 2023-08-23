@@ -1,4 +1,4 @@
-import { IToggleObjectValue } from '../types';
+import { IToggleObjectValue } from '../types'
 
 /**
  * Функция с замыканием
@@ -9,12 +9,12 @@ import { IToggleObjectValue } from '../types';
 export const toggleObjectValue = (object: IToggleObjectValue) => {
   return (value: string) => {
     Object.keys(object).forEach((key) => {
-      object[key] = false;
+      object[key] = false
       if (key === value) {
-        object[key] = true;
+        object[key] = true
       }
-    });
+    })
 
-    return object;
-  };
-};
+    return object
+  }
+}

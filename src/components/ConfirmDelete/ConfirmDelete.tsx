@@ -1,27 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import './ConfirmDelete.css';
 
-interface ConfirmDeleteProps {
-  setOpen: any;
-  yes: string;
-  no: string;
-  onDeleteNote: any;
-}
+import { TConfirmDeleteProps } from '../../types'
+import './ConfirmDelete.scss'
 
-const ConfirmDelete = (props: ConfirmDeleteProps) => {
+const ConfirmDelete = (props: TConfirmDeleteProps) => {
   return (
-    <div className="confirm-delete">
+    <div className='confirm-delete'>
       <strong>Удалить заметку?</strong>
-      <div className="confirm-delete__buttons">
-        <button className="button delete-button" onClick={props.onDeleteNote}>
+      <div className='confirm-delete__buttons'>
+        <button className='button delete-button' onClick={props.onDeleteNote}>
           {props.yes}
         </button>
-        <button className="button" onClick={props.setOpen}>
+        <button className='button' onClick={props.setOpen}>
           {props.no}
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ConfirmDelete;
+export default ConfirmDelete
